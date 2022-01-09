@@ -2,6 +2,8 @@
   <section id="about">
   {{ if isset .Site.Params "description" }}
     {{ .Site.Params.description | $.Page.RenderString }}
+  {{ else }}
+    {{partial "description.html" . }}
   {{ end }}
   {{ if isset .Site.Params "social" }}
       <p>Find me on
