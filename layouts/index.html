@@ -105,6 +105,20 @@
   </section>
   {{ end }}
 
+  {{ if .Site.Data.writings }}
+    <section id="writings">
+      <span class="h1">Writings</span>
+      <ul class="post-list">
+        {{ range .Site.Data.writings.list }}
+        <li class="post-item">
+          <div class="meta"><time datetime="{{ .date }}" itemprop="datePublished">{{ dateFormat $dateFormat .date }}</time></div>
+          <a href="{{ .url }}">{{ .name }}</a>
+        </li>
+        {{ end }}
+      </ul>
+    </section>
+  {{ end }}
+
   {{ if .Site.Data.talks }}
     <section id="talks">
       <span class="h1">Talks</span>
